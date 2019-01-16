@@ -151,11 +151,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#utilities">Utilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="generated/verde.distance_mask.html">verde.distance_mask</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/verde.maxabs.html">verde.maxabs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/verde.variance_to_weights.html">verde.variance_to_weights</a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/verde.test.html">verde.test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/verde.maxabs.html">verde.maxabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/verde.distance_mask.html">verde.distance_mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/verde.variance_to_weights.html">verde.variance_to_weights</a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/verde.grid_to_table.html">verde.grid_to_table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/verde.median_distance.html">verde.median_distance</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#datasets">Datasets</a><ul>
@@ -170,8 +171,11 @@
 <li class="toctree-l3"><a class="reference internal" href="generated/verde.datasets.setup_rio_magnetic_map.html">verde.datasets.setup_rio_magnetic_map</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#base-classes">Base Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-classes-and-functions">Base Classes and Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="generated/verde.base.BaseGridder.html">verde.base.BaseGridder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/verde.base.n_1d_arrays.html">verde.base.n_1d_arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/verde.base.check_fit_input.html">verde.base.check_fit_input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/verde.base.least_squares.html">verde.base.least_squares</a></li>
 </ul>
 </li>
 </ul>
@@ -269,26 +273,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast + .nbinput {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-</style>
-<div class="section" id="module-verde">
+  <div class="section" id="module-verde">
 <span id="api-reference"></span><span id="api"></span><h1>API Reference<a class="headerlink" href="#module-verde" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="interpolators">
 <h2>Interpolators<a class="headerlink" href="#interpolators" title="Permalink to this headline">¶</a></h2>
@@ -407,20 +392,23 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/verde.test.html#verde.test" title="verde.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test</span></code></a>([doctest,&nbsp;verbose,&nbsp;coverage,&nbsp;figures])</td>
+<td>Run the test suite.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/verde.maxabs.html#verde.maxabs" title="verde.maxabs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxabs</span></code></a>(*args[,&nbsp;nan])</td>
+<td>Calculate the maximum absolute value of the given array(s).</td>
+</tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/verde.distance_mask.html#verde.distance_mask" title="verde.distance_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">distance_mask</span></code></a>(data_coordinates,&nbsp;maxdist[,&nbsp;…])</td>
 <td>Mask grid points that are too far from the given data points.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/verde.maxabs.html#verde.maxabs" title="verde.maxabs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxabs</span></code></a>(*args)</td>
-<td>Calculate the maximum absolute value of the given array(s).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/verde.variance_to_weights.html#verde.variance_to_weights" title="verde.variance_to_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance_to_weights</span></code></a>(variance[,&nbsp;tol,&nbsp;dtype])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/verde.variance_to_weights.html#verde.variance_to_weights" title="verde.variance_to_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance_to_weights</span></code></a>(variance[,&nbsp;tol,&nbsp;dtype])</td>
 <td>Converts data variances to weights for gridding.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/verde.test.html#verde.test" title="verde.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test</span></code></a>([doctest,&nbsp;verbose,&nbsp;coverage,&nbsp;figures])</td>
-<td>Run the test suite.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/verde.grid_to_table.html#verde.grid_to_table" title="verde.grid_to_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_to_table</span></code></a>(grid)</td>
 <td>Convert a grid to a table with the values and coordinates of each point.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/verde.median_distance.html#verde.median_distance" title="verde.median_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median_distance</span></code></a>(coordinates[,&nbsp;k_nearest,&nbsp;…])</td>
+<td>Median distance between the <em>k</em> nearest neighbors of each point.</td>
 </tr>
 </tbody>
 </table>
@@ -463,8 +451,8 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="base-classes">
-<h2>Base Classes<a class="headerlink" href="#base-classes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-classes-and-functions">
+<h2>Base Classes and Functions<a class="headerlink" href="#base-classes-and-functions" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -473,6 +461,15 @@
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/verde.base.BaseGridder.html#verde.base.BaseGridder" title="verde.base.BaseGridder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base.BaseGridder</span></code></a></td>
 <td>Base class for gridders.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/verde.base.n_1d_arrays.html#verde.base.n_1d_arrays" title="verde.base.n_1d_arrays"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base.n_1d_arrays</span></code></a>(arrays,&nbsp;n)</td>
+<td>Get the first n elements from a tuple/list, make sure they are arrays, and ravel.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/verde.base.check_fit_input.html#verde.base.check_fit_input" title="verde.base.check_fit_input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base.check_fit_input</span></code></a>(coordinates,&nbsp;data,&nbsp;weights)</td>
+<td>Validate the inputs to the fit method of gridders.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/verde.base.least_squares.html#verde.base.least_squares" title="verde.base.least_squares"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base.least_squares</span></code></a>(jacobian,&nbsp;data,&nbsp;weights)</td>
+<td>Solve a weighted least-squares problem with optional damping regularization.</td>
 </tr>
 </tbody>
 </table>
@@ -499,8 +496,8 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+        &copy; Copyright 2018-2019, Leonardo Uieda
+      Last updated on Jan 16, 2019.
 
     </p>
   </div>
@@ -525,7 +522,8 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

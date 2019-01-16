@@ -213,12 +213,8 @@
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="n">n_1d_arrays</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pykdtree.kdtree</span> <span class="k">import</span> <span class="n">KDTree</span>
-<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="k">import</span> <span class="n">cKDTree</span> <span class="k">as</span> <span class="n">KDTree</span>  <span class="c1"># pylint: disable=no-name-in-module</span>
+<span class="kn">from</span> <span class="nn">.base</span> <span class="k">import</span> <span class="n">n_1d_arrays</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="n">kdtree</span>
 
 
 <div class="viewcode-block" id="distance_mask"><a class="viewcode-back" href="../../api/generated/verde.distance_mask.html#verde.distance_mask">[docs]</a><span class="k">def</span> <span class="nf">distance_mask</span><span class="p">(</span>
@@ -314,7 +310,7 @@
     <span class="k">if</span> <span class="n">projection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">data_coordinates</span> <span class="o">=</span> <span class="n">projection</span><span class="p">(</span><span class="o">*</span><span class="n">n_1d_arrays</span><span class="p">(</span><span class="n">data_coordinates</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
         <span class="n">coordinates</span> <span class="o">=</span> <span class="n">projection</span><span class="p">(</span><span class="o">*</span><span class="n">n_1d_arrays</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">tree</span> <span class="o">=</span> <span class="n">KDTree</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">n_1d_arrays</span><span class="p">(</span><span class="n">data_coordinates</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">kdtree</span><span class="p">(</span><span class="n">data_coordinates</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
     <span class="n">distance</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">n_1d_arrays</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
     <span class="n">mask</span> <span class="o">=</span> <span class="n">distance</span> <span class="o">&lt;=</span> <span class="n">maxdist</span>
     <span class="k">if</span> <span class="n">grid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -332,8 +328,8 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+        &copy; Copyright 2018-2019, Leonardo Uieda
+      Last updated on Jan 16, 2019.
 
     </p>
   </div>
@@ -358,7 +354,8 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

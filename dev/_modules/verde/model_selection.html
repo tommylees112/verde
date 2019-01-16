@@ -356,8 +356,8 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    scores : list</span>
-<span class="sd">        List of scores for each split of the cross-validation generator. If</span>
+<span class="sd">    scores : array</span>
+<span class="sd">        Array of scores for each split of the cross-validation generator. If</span>
 <span class="sd">        *client* is not None, then the scores will be futures.</span>
 
 <span class="sd">    Examples</span>
@@ -373,9 +373,10 @@
 
 <span class="sd">    &gt;&gt;&gt; # To run parallel, we need to create a dask.distributed Client. It will</span>
 <span class="sd">    &gt;&gt;&gt; # create a local cluster if no arguments are given so we can run the</span>
-<span class="sd">    &gt;&gt;&gt; # scoring on a single machine.</span>
+<span class="sd">    &gt;&gt;&gt; # scoring on a single machine. We&#39;ll use threads instead of processes for this</span>
+<span class="sd">    &gt;&gt;&gt; # example but in most cases you&#39;ll want processes.</span>
 <span class="sd">    &gt;&gt;&gt; from dask.distributed import Client</span>
-<span class="sd">    &gt;&gt;&gt; client = Client()</span>
+<span class="sd">    &gt;&gt;&gt; client = Client(processes=False)</span>
 <span class="sd">    &gt;&gt;&gt; # The scoring will now only submit tasks to our local cluster</span>
 <span class="sd">    &gt;&gt;&gt; scores = cross_val_score(Trend(degree=1), coords, data, client=client)</span>
 <span class="sd">    &gt;&gt;&gt; # The scores are not the actual values but Futures</span>
@@ -402,7 +403,7 @@
         <span class="p">)</span>
         <span class="n">score</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">fit_score</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">)</span>
         <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">scores</span></div>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">fit_score</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">):</span>
@@ -455,8 +456,8 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+        &copy; Copyright 2018-2019, Leonardo Uieda
+      Last updated on Jan 16, 2019.
 
     </p>
   </div>
@@ -481,7 +482,8 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

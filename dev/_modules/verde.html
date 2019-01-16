@@ -222,6 +222,7 @@
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">.mask</span> <span class="k">import</span> <span class="n">distance_mask</span>
 <span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="n">variance_to_weights</span><span class="p">,</span> <span class="n">maxabs</span><span class="p">,</span> <span class="n">grid_to_table</span>
+<span class="kn">from</span> <span class="nn">.distances</span> <span class="k">import</span> <span class="n">median_distance</span>
 <span class="kn">from</span> <span class="nn">.blockreduce</span> <span class="k">import</span> <span class="n">BlockReduce</span><span class="p">,</span> <span class="n">BlockMean</span>
 <span class="kn">from</span> <span class="nn">.scipygridder</span> <span class="k">import</span> <span class="n">ScipyGridder</span>
 <span class="kn">from</span> <span class="nn">.trend</span> <span class="k">import</span> <span class="n">Trend</span>
@@ -289,8 +290,8 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+        &copy; Copyright 2018-2019, Leonardo Uieda
+      Last updated on Jan 16, 2019.
 
     </p>
   </div>
@@ -315,7 +316,8 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

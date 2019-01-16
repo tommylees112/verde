@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="verde.test" href="verde.test.html" />
-    <link rel="prev" title="verde.maxabs" href="verde.maxabs.html" />
+    <link rel="next" title="verde.grid_to_table" href="verde.grid_to_table.html" />
+    <link rel="prev" title="verde.distance_mask" href="verde.distance_mask.html" />
     
     <script src="../../_static/require.js"></script>
 
@@ -123,18 +123,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../index.html#model-selection">Model Selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#coordinate-manipulation">Coordinate Manipulation</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#utilities">Utilities</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="verde.distance_mask.html">verde.distance_mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.test.html">verde.test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="verde.maxabs.html">verde.maxabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.distance_mask.html">verde.distance_mask</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">verde.variance_to_weights</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#examples-using-verde-variance-to-weights">Examples using <code class="docutils literal notranslate"><span class="pre">verde.variance_to_weights</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="verde.test.html">verde.test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="verde.grid_to_table.html">verde.grid_to_table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verde.median_distance.html">verde.median_distance</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#datasets">Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes-and-functions">Base Classes and Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
@@ -234,26 +235,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast + .nbinput {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-</style>
-<div class="section" id="verde-variance-to-weights">
+  <div class="section" id="verde-variance-to-weights">
 <h1>verde.variance_to_weights<a class="headerlink" href="#verde-variance-to-weights" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="verde.variance_to_weights">
@@ -324,10 +306,10 @@ with the weights corresponding to each variance array.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="verde.test.html" class="btn btn-neutral float-right" title="verde.test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="verde.grid_to_table.html" class="btn btn-neutral float-right" title="verde.grid_to_table" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="verde.maxabs.html" class="btn btn-neutral" title="verde.maxabs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="verde.distance_mask.html" class="btn btn-neutral" title="verde.distance_mask" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -336,8 +318,8 @@ with the weights corresponding to each variance array.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+        &copy; Copyright 2018-2019, Leonardo Uieda
+      Last updated on Jan 16, 2019.
 
     </p>
   </div>
@@ -362,7 +344,8 @@ with the weights corresponding to each variance array.</p>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   
